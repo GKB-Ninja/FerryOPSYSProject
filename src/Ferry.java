@@ -32,8 +32,7 @@ public class Ferry {
         Logger.log(String.format("Ferry created. Starting at Side %s", startSide));
     }
 
-    /** New method: loads as many vehicles as possible from the current waiting area. **/
-    /**
+    /** New method: loads as many vehicles as possible from the current waiting area.
      * Blocks until ferry should depart (full, next doesn't fit, or timeout).
      * While waiting, it loads arriving vehicles atomically to avoid busy-waiting
      * and to ensure mutual exclusion over ferry state.
@@ -62,12 +61,13 @@ public class Ferry {
                     }
                 }
 
-                // Decide departure
+                // Decide departure - Max Capacity
                 if (currentLoad == MAX_CAPACITY) {
                     Logger.log("Ferry is full → departing");
                     return;
                 }
 
+                // Decide departure - Next vehicle doesn't fit
                 Vehicle next = currentWA.peekNext();
                 if (next != null && currentLoad + next.getType().getCapacity() > MAX_CAPACITY) {
                     Logger.log(String.format("Next vehicle %s cannot fit (%d+%d > %d) → departing",
@@ -75,7 +75,7 @@ public class Ferry {
                     return;
                 }
 
-                // Wait for more vehicles or timeout (prevents starvation)
+                // Decide departure - Timeout
                 long remaining = deadline - System.currentTimeMillis();
                 if (remaining <= 0) {
                     Logger.log("Timeout reached → departing to prevent starvation");
@@ -89,7 +89,7 @@ public class Ferry {
         }
     }
 
-    public void departAndTravel() throws InterruptedException {
+    public void logAndTravel() throws InterruptedException {
         // --- Record trip statistics BEFORE travel ---
         lock.lock();
         try {

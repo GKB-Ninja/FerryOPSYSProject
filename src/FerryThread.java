@@ -17,7 +17,7 @@ public class FerryThread extends Thread {
                     break;
                 }
 
-                ferry.departAndTravel();
+                ferry.logAndTravel();
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
