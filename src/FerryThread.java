@@ -9,13 +9,27 @@ public class FerryThread extends Thread {
     public void run() {
         try {
             while (ferry.isRunning()) {
-                // Block until it's time to depart; load happens atomically inside.
+                // Wait until departure conditions are met
                 ferry.boardAndDecideDeparture();
+
+                // Stop immediately if shutdown happened during waiting
+                if (!ferry.isRunning()) {
+                    break;
+                }
+
                 ferry.departAndTravel();
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            Logger.log("Ferry thread interrupted");
+
+            // Only log unexpected interruptions
+            if (ferry.isRunning()) {
+                Logger.log("Ferry thread interrupted unexpectedly while running.");
+            }
+            // Else return complete message.
+            else {
+                Logger.log("All vehicles completed their trip.");
+            }
         }
     }
 }

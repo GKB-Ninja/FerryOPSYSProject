@@ -53,7 +53,7 @@ public class Main {
             vt.join();
         }
 
-        // Stop ferry
+        // Stop ferry after all vehicles returned.
         ferry.stop();
         ferryThread.interrupt();
         ferryThread.join();
@@ -61,9 +61,6 @@ public class Main {
         // Print detailed vehicle performance table
         stats.printTripPerformance();
         stats.printVehiclePerformance(allVehicles);
-        stats.printReport();
-
-        // Print original summary
         stats.printReport();
         Logger.close();
 

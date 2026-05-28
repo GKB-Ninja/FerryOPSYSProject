@@ -107,12 +107,12 @@ public class Statistics {
             double travelSec = travel / 1000.0; // how much time it traveled
             double idleSec = idle / 1000.0; // how much time it had done nothing
 
-            double depSec = (v.firstDepartureTime - simStart) / 1000.0;
+            double depSec = (v.getFirstDepartureTime() - simStart) / 1000.0;
             double retSec = (v.getEndTime() - simStart) / 1000.0;
 
             System.out.printf("%-10s %-5d %-10s %-15.2f %-15.2f %-17.3f %-17.3f %-15.2f %-15.2f %-15.2f%n",
                     v.getType().toString(), v.getId(),
-                    v.getOriginSide().toString(),   // <-- NEW column
+                    v.getOriginSide().toString(),
                     idleSec, travelSec, depSec, retSec,
                     queueSec, tollSec, totalSec);
 

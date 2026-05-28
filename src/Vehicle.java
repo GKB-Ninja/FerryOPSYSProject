@@ -5,13 +5,11 @@ public class Vehicle {
     private volatile Side currentSide;
     private volatile boolean completed = false;
 
-    // Existing timing
+    // Timing
     private long queueEntryTime;
     private long boardingStartTime;
     private long totalWaitTime = 0;
-
-    // New timing fields
-    long firstDepartureTime = 0;
+    private long firstDepartureTime = 0;
     private long startTime;          // when vehicle thread started
     private long endTime;            // when round trip completed
     private long totalTollTime = 0;  // sum of toll booth processing times
@@ -24,22 +22,21 @@ public class Vehicle {
         this.currentSide = originSide;
     }
 
-    // --- Getters (existing) ---
+    // Getters
     public int getId()              { return id; }
     public VehicleType getType()    { return type; }
     public Side getOriginSide()     { return originSide; }
     public Side getCurrentSide()    { return currentSide; }
     public boolean isCompleted()    { return completed; }
     public long getTotalWaitTime()  { return totalWaitTime; }
-    public long getBoardingStartTime() { return boardingStartTime; }  // new getter
-
-    // --- New getters ---
+    public long getBoardingStartTime() { return boardingStartTime; }
+    public long getFirstDepartureTime() { return firstDepartureTime; }
     public long getStartTime()      { return startTime; }
     public long getEndTime()        { return endTime; }
     public long getTotalTollTime()  { return totalTollTime; }
     public long getTotalTravelTime(){ return totalTravelTime; }
 
-    // --- Setters (existing) ---
+    // Setters
     public void setCurrentSide(Side side) { this.currentSide = side; }
     public void setCompleted(boolean done) { this.completed = done; }
     public void setQueueEntryTime(long time)    { this.queueEntryTime = time; }
@@ -49,8 +46,7 @@ public class Vehicle {
         long wait = boardingStartTime - queueEntryTime;
         if (wait > 0) addWaitTime(wait);
     }
-
-    // --- New timing setters ---
+    public void setFirstDepartureTime(long time) { this.firstDepartureTime = time; }
     public void setStartTime(long time)        { this.startTime = time; }
     public void setEndTime(long time)          { this.endTime = time; }
     public void addTollTime(long time)         { this.totalTollTime += time; }

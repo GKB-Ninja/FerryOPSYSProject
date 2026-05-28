@@ -84,8 +84,8 @@ public class VehicleThread extends Thread {
         }
 
         // Record first departure time (the first time we boarded the ferry)
-        if (vehicle.firstDepartureTime == 0) {
-            vehicle.firstDepartureTime = boardingTime;
+        if (vehicle.getFirstDepartureTime() == 0) {
+            vehicle.setFirstDepartureTime(boardingTime);
         }
     }
 }
