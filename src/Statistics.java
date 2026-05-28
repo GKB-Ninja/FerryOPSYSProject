@@ -69,11 +69,12 @@ public class Statistics {
 
     // ---------- PERFORMANCE PER VEHICLE ----------
     public void printVehiclePerformance(List<Vehicle> vehicles) {
-        System.out.println("\n================================================ PERFORMANCE PER VEHICLE ======================================================");
+        System.out.println("\n=================================================== PERFORMANCE PER VEHICLE ===========================================================");
+        // new header line with "Start Side"
         System.out.printf("%-10s %-5s %-10s %-15s %-15s %-17s %-17s %-15s %-15s %-15s%n",
                 "Type", "ID", "Start Side", "Idle(s)", "Travel(s)", "First Dep Time(s)", "End Time(s)",
                 "Queue Wait(s)", "Toll Wait(s)", "Total Time(s)");
-        System.out.println("===============================================================================================================================");
+        System.out.println("=======================================================================================================================================");
 
         List<Vehicle> sorted = new ArrayList<>(vehicles);
         sorted.sort(Comparator.comparing(Vehicle::getType).thenComparingInt(Vehicle::getId));
@@ -111,7 +112,7 @@ public class Statistics {
 
             System.out.printf("%-10s %-5d %-10s %-15.2f %-15.2f %-17.3f %-17.3f %-15.2f %-15.2f %-15.2f%n",
                     v.getType().toString(), v.getId(),
-                    v.getOriginSide().toString(),
+                    v.getOriginSide().toString(),   // <-- NEW column
                     idleSec, travelSec, depSec, retSec,
                     queueSec, tollSec, totalSec);
 
@@ -137,7 +138,7 @@ public class Statistics {
             }
         }
 
-        System.out.println("============================================== AVERAGE STATS PER VEHICLE ======================================================");
+        System.out.println("====================================================== AVERAGE STATS PER VEHICLE ======================================================");
 
         // Averages per type
         printAvgLine("Car", "-", carCount,
@@ -163,7 +164,7 @@ public class Statistics {
                 overallIdle, overallTravel, overallDepart, overallReturn,
                 overallQueue, overallToll, overallTotal);
 
-        System.out.println("===============================================================================================================================");
+        System.out.println("========================================================================================================================================");
     }
 
     private void printAvgLine(String type, String label, int count,
@@ -171,14 +172,14 @@ public class Statistics {
                               double sumDepart, double sumReturn,
                               double sumQueue, double sumToll, double sumTotal) {
         if (count > 0) {
-            System.out.printf("%-10s %-5s %-15.2f %-15.2f %-17.3f %-17.3f %-15.2f %-15.2f %-15.2f%n",
-                    type, label,
+            System.out.printf("%-10s %-5s %-10s %-15.2f %-15.2f %-17.3f %-17.3f %-15.2f %-15.2f %-15.2f%n",
+                    type, label, "-",
                     sumIdle / count, sumTravel / count,
                     sumDepart / count, sumReturn / count,
                     sumQueue / count, sumToll / count, sumTotal / count);
         } else {
-            System.out.printf("%-10s %-5s %-15s %-15s %-17s %-17s %-15s %-15s %-15s%n",
-                    type, label, "-", "-", "-", "-", "-", "-", "-");
+            System.out.printf("%-10s %-5s %-10s %-15s %-15s %-17s %-17s %-15s %-15s %-15s%n",
+                    type, label, "-", "-", "-", "-", "-", "-", "-", "-");
         }
     }
 
