@@ -10,7 +10,7 @@ public class FerryThread extends Thread {
         try {
             while (ferry.isRunning()) {
                 // Block until it's time to depart; load happens atomically inside.
-                ferry.boardAndDecideDepartion();
+                ferry.boardAndDecideDeparture();
                 ferry.departAndTravel();
             }
         } catch (InterruptedException e) {

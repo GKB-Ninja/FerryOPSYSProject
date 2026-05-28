@@ -27,18 +27,6 @@ public class WaitingArea {
         }
     }
 
-    // Called by the ferry to block until at least one vehicle is present
-    public void waitForVehicles(long timeoutMs) throws InterruptedException {
-        lock.lock();
-        try {
-            if (queue.isEmpty()) {
-                notEmpty.await(timeoutMs, java.util.concurrent.TimeUnit.MILLISECONDS);
-            }
-        } finally {
-            lock.unlock();
-        }
-    }
-
     // Safely removes and returns the front vehicle (called by Ferry during boarding)
     public Vehicle getNext() {
         lock.lock();

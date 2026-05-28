@@ -32,38 +32,13 @@ public class Ferry {
         Logger.log(String.format("Ferry created. Starting at Side %s", startSide));
     }
 
-    /** New method: loads as many vehicles as possible from the current waiting area. */
-    public void loadVehicles() {
-        lock.lock();
-        try {
-            if (unloading) return;
-            WaitingArea currentWA = waitingAreas[currentSide.ordinal()];
-            while (true) {
-                Vehicle next = currentWA.peekNext();
-                if (next == null) break;
-                if (currentLoad + next.getType().getCapacity() > MAX_CAPACITY) break;
-
-                Vehicle v = currentWA.getNext();  // also sets boarding time & computes wait
-                if (v != null) {
-                    currentLoad += v.getType().getCapacity();
-                    loadedVehicles.add(v);
-                    Logger.log(String.format("Ferry loaded %s (capacity=%d, current load=%d/%d)",
-                            v, v.getType().getCapacity(), currentLoad, MAX_CAPACITY));
-                } else {
-                    break;
-                }
-            }
-        } finally {
-            lock.unlock();
-        }
-    }
-
+    /** New method: loads as many vehicles as possible from the current waiting area. **/
     /**
      * Blocks until ferry should depart (full, next doesn't fit, or timeout).
      * While waiting, it loads arriving vehicles atomically to avoid busy-waiting
      * and to ensure mutual exclusion over ferry state.
      */
-    public void boardAndDecideDepartion() throws InterruptedException {
+    public void boardAndDecideDeparture() throws InterruptedException {
         lock.lock();
         try {
             if (unloading) return;
@@ -109,35 +84,6 @@ public class Ferry {
                 // Wait to be signalled that a vehicle arrived or until timeout
                 departureCondition.await(Math.min(remaining, MAX_WAIT_MS), TimeUnit.MILLISECONDS);
             }
-        } finally {
-            lock.unlock();
-        }
-    }
-
-    public boolean shouldDepart() throws InterruptedException {
-        lock.lock();
-        try {
-            if (currentLoad == MAX_CAPACITY) {
-                Logger.log("Ferry is full → departing");
-                return true;
-            }
-
-            WaitingArea currentWA = waitingAreas[currentSide.ordinal()];
-            Vehicle next = currentWA.peekNext();
-            if (next != null && currentLoad + next.getType().getCapacity() > MAX_CAPACITY) {
-                Logger.log(String.format("Next vehicle %s cannot fit (%d+%d > %d) → departing",
-                        next, currentLoad, next.getType().getCapacity(), MAX_CAPACITY));
-                return true;
-            }
-
-            Logger.log(String.format("Ferry waiting for more vehicles (current load %d/%d)",
-                    currentLoad, MAX_CAPACITY));
-            boolean signaled = departureCondition.await(MAX_WAIT_MS, TimeUnit.MILLISECONDS);
-            if (!signaled) {
-                Logger.log("Timeout reached → departing to prevent starvation");
-                return true;
-            }
-            return false;
         } finally {
             lock.unlock();
         }
@@ -198,17 +144,6 @@ public class Ferry {
             loadedVehicles.clear();
             currentLoad = 0;
             unloading = false;
-        } finally {
-            lock.unlock();
-        }
-    }
-
-    public void waitUntilCanLoad(Side requiredSide) throws InterruptedException {
-        lock.lock();
-        try {
-            while (unloading || currentSide != requiredSide) {
-                canLoad.await();
-            }
         } finally {
             lock.unlock();
         }
