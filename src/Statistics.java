@@ -4,30 +4,36 @@ import java.util.Comparator;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
+/**
+ * Thread-safe tracker for simulation metrics.
+ * Calculates global wait times, trip counts, and prints formatted end-of-simulation reports.
+ */
 public class Statistics {
     private final AtomicLong totalWaitTime = new AtomicLong(0);
     private final AtomicLong maxWaitTime = new AtomicLong(0);
     private final AtomicInteger completedVehicles = new AtomicInteger(0);
     private final AtomicInteger totalTrips = new AtomicInteger(0);
+    private final AtomicLong totalFerryTravelTime = new AtomicLong(0);
     private final long startTime = System.currentTimeMillis();
 
     // Store trip records for later printing
     private final List<TripRecord> tripRecords = new ArrayList<>();
 
-    // Private inner class to hold one trip's data
     private static class TripRecord {
         final int tripNumber;
         final Side side;
         final int load;
         final int vehicleCount;
         final long waitMs;
+        final long travelMs;
 
-        TripRecord(int tripNumber, Side side, int load, int vehicleCount, long waitMs) {
+        TripRecord(int tripNumber, Side side, int load, int vehicleCount, long waitMs, long travelMs) {
             this.tripNumber = tripNumber;
             this.side = side;
             this.load = load;
             this.vehicleCount = vehicleCount;
             this.waitMs = waitMs;
+            this.travelMs = travelMs;
         }
     }
 
@@ -40,13 +46,12 @@ public class Statistics {
         completedVehicles.incrementAndGet();
     }
 
-    // Old simple trip counter replaced by detailed version
-    public void recordTrip(Side side, int load, int vehicleCount, long waitMs) {
-        int tripNum = totalTrips.incrementAndGet();   // increment and get the new trip number
-        tripRecords.add(new TripRecord(tripNum, side, load, vehicleCount, waitMs));
+    public void recordTrip(Side side, int load, int vehicleCount, long waitMs, long travelMs) {
+        int tripNum = totalTrips.incrementAndGet();
+        totalFerryTravelTime.addAndGet(travelMs);
+        tripRecords.add(new TripRecord(tripNum, side, load, vehicleCount, waitMs, travelMs));
     }
 
-    // ---------- FERRY PERFORMANCE ----------
     public void printTripPerformance() {
         if (tripRecords.isEmpty()) {
             System.out.println("No ferry trips recorded.");
@@ -58,19 +63,16 @@ public class Statistics {
         System.out.println("===============================================================");
         for (TripRecord t : tripRecords) {
             double loadPct = (t.load * 100.0) / 20.0;
-            double waitSec = t.waitMs / 1000.0;
             System.out.printf("%-6d %-5s %-10d %-12d %-10.1f %-12.3f %-10.3f%n",
                     t.tripNumber, t.side.toString(),
                     t.vehicleCount, t.load, loadPct,
-                    waitSec, 0.800);   // TRAVEL_TIME_MS = 800 ms
+                    t.waitMs / 1000.0, t.travelMs / 1000.0);
         }
         System.out.println("===============================================================");
     }
 
-    // ---------- PERFORMANCE PER VEHICLE ----------
     public void printVehiclePerformance(List<Vehicle> vehicles) {
         System.out.println("\n=================================================== PERFORMANCE PER VEHICLE ===========================================================");
-        // new header line with "Start Side"
         System.out.printf("%-10s %-5s %-10s %-15s %-15s %-17s %-17s %-15s %-15s %-15s%n",
                 "Type", "ID", "Start Side", "Idle(s)", "Travel(s)", "First Dep Time(s)", "End Time(s)",
                 "Queue Wait(s)", "Toll Wait(s)", "Total Time(s)");
@@ -80,8 +82,6 @@ public class Statistics {
         sorted.sort(Comparator.comparing(Vehicle::getType).thenComparingInt(Vehicle::getId));
 
         long simStart = this.startTime;
-
-        // Accumulators for averages (including departure / return times)
         double totalCarTotal = 0, totalCarToll = 0, totalCarQueue = 0, totalCarTravel = 0, totalCarIdle = 0;
         double totalCarDepart = 0, totalCarReturn = 0;
         int carCount = 0;
@@ -101,11 +101,11 @@ public class Statistics {
             long travel = v.getTotalTravelTime();
             long idle = total - toll - queue - travel;
 
-            double totalSec = total / 1000.0; //how much time past beginning through end?
-            double tollSec = toll / 1000.0;   // how much time toll waiting time took?
-            double queueSec = queue / 1000.0; // how much time queue time took?
-            double travelSec = travel / 1000.0; // how much time it traveled
-            double idleSec = idle / 1000.0; // how much time it had done nothing
+            double totalSec = total / 1000.0;
+            double tollSec = toll / 1000.0;
+            double queueSec = queue / 1000.0;
+            double travelSec = travel / 1000.0;
+            double idleSec = idle / 1000.0;
 
             double depSec = (v.getFirstDepartureTime() - simStart) / 1000.0;
             double retSec = (v.getEndTime() - simStart) / 1000.0;
@@ -140,18 +140,10 @@ public class Statistics {
 
         System.out.println("====================================================== AVERAGE STATS PER VEHICLE ======================================================");
 
-        // Averages per type
-        printAvgLine("Car", "-", carCount,
-                totalCarIdle, totalCarTravel, totalCarDepart, totalCarReturn,
-                totalCarQueue, totalCarToll, totalCarTotal);
-        printAvgLine("Minibus", "-", minibusCount,
-                totalMinibusIdle, totalMinibusTravel, totalMinibusDepart, totalMinibusReturn,
-                totalMinibusQueue, totalMinibusToll, totalMinibusTotal);
-        printAvgLine("Truck", "-", truckCount,
-                totalTruckIdle, totalTruckTravel, totalTruckDepart, totalTruckReturn,
-                totalTruckQueue, totalTruckToll, totalTruckTotal);
+        printAvgLine("Car", "-", carCount, totalCarIdle, totalCarTravel, totalCarDepart, totalCarReturn, totalCarQueue, totalCarToll, totalCarTotal);
+        printAvgLine("Minibus", "-", minibusCount, totalMinibusIdle, totalMinibusTravel, totalMinibusDepart, totalMinibusReturn, totalMinibusQueue, totalMinibusToll, totalMinibusTotal);
+        printAvgLine("Truck", "-", truckCount, totalTruckIdle, totalTruckTravel, totalTruckDepart, totalTruckReturn, totalTruckQueue, totalTruckToll, totalTruckTotal);
 
-        // Overall average
         int overallCount = carCount + minibusCount + truckCount;
         double overallIdle = totalCarIdle + totalMinibusIdle + totalTruckIdle;
         double overallTravel = totalCarTravel + totalMinibusTravel + totalTruckTravel;
@@ -160,10 +152,8 @@ public class Statistics {
         double overallTotal = totalCarTotal + totalMinibusTotal + totalTruckTotal;
         double overallDepart = totalCarDepart + totalMinibusDepart + totalTruckDepart;
         double overallReturn = totalCarReturn + totalMinibusReturn + totalTruckReturn;
-        printAvgLine("OVERALL", "-", overallCount,
-                overallIdle, overallTravel, overallDepart, overallReturn,
-                overallQueue, overallToll, overallTotal);
 
+        printAvgLine("OVERALL", "-", overallCount, overallIdle, overallTravel, overallDepart, overallReturn, overallQueue, overallToll, overallTotal);
         System.out.println("========================================================================================================================================");
     }
 
@@ -189,15 +179,18 @@ public class Statistics {
 
         System.out.println("\n========== SIMULATION STATISTICS ==========");
         System.out.printf("Total simulation time: %.2f seconds%n", totalTime / 1000.0);
+
         if (completed > 0) {
-            System.out.printf("Average waiting time per vehicle: %.2f ms%n",
-                    (double) totalWaitTime.get() / completed);
+            System.out.printf("Average waiting time per vehicle: %.2f ms%n", (double) totalWaitTime.get() / completed);
             System.out.printf("Maximum waiting time: %d ms%n", maxWaitTime.get());
         } else {
             System.out.println("No vehicles completed.");
         }
+
         System.out.printf("Number of ferry trips: %d%n", totalTrips.get());
-        long travelTime = totalTrips.get() * 800L;
+
+        // Utilize the dynamic random travel time to calculate accurate utilization ratio
+        long travelTime = totalFerryTravelTime.get();
         double utilization = (totalTime > 0) ? (100.0 * travelTime / totalTime) : 0.0;
         System.out.printf("Ferry utilization ratio: %.2f%%%n", utilization);
         System.out.println("===========================================");

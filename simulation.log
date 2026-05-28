@@ -1,446 +1,446 @@
-[1] Ferry created. Starting at Side A
-[2] Car-2 entered toll on Side B (booth 1)
+[1] Ferry created. Starting at Side B
+[2] Car-7 entered toll on Side B (booth 2)
 [3] Car-3 entered toll on Side A (booth 2)
-[4] Car-1 entered toll on Side B (booth 2)
-[5] Car-4 entered toll on Side A (booth 1)
-[6] Car-4 exited toll on Side A
-[7] Car-7 entered toll on Side A (booth 1)
-[8] Car-4 joined queue on Side A (position 1)
-[9] Car-4 taken from queue on Side A
-[10] Ferry loaded Car-4 (capacity=1, current load=1/20)
-[11] Car-1 exited toll on Side B
-[12] Car-1 joined queue on Side B (position 1)
-[13] Minibus-14 entered toll on Side B (booth 2)
-[14] Car-2 exited toll on Side B
-[15] Car-2 joined queue on Side B (position 2)
-[16] Car-12 entered toll on Side B (booth 1)
-[17] Car-3 exited toll on Side A
-[18] Car-3 joined queue on Side A (position 1)
-[19] Car-5 entered toll on Side A (booth 2)
-[20] Car-3 taken from queue on Side A
-[21] Ferry loaded Car-3 (capacity=1, current load=2/20)
-[22] Car-12 exited toll on Side B
-[23] Car-12 joined queue on Side B (position 3)
-[24] Car-6 entered toll on Side B (booth 1)
-[25] Minibus-14 exited toll on Side B
-[26] Minibus-14 joined queue on Side B (position 4)
-[27] Car-8 entered toll on Side B (booth 2)
-[28] Car-7 exited toll on Side A
-[29] Car-7 joined queue on Side A (position 1)
-[30] Car-11 entered toll on Side A (booth 1)
-[31] Car-7 taken from queue on Side A
-[32] Ferry loaded Car-7 (capacity=1, current load=3/20)
-[33] Car-5 exited toll on Side A
-[34] Car-5 joined queue on Side A (position 1)
-[35] Minibus-15 entered toll on Side A (booth 2)
-[36] Car-5 taken from queue on Side A
-[37] Ferry loaded Car-5 (capacity=1, current load=4/20)
-[38] Car-11 exited toll on Side A
-[39] Car-11 joined queue on Side A (position 1)
-[40] Minibus-17 entered toll on Side A (booth 1)
-[41] Car-11 taken from queue on Side A
-[42] Ferry loaded Car-11 (capacity=1, current load=5/20)
-[43] Minibus-17 exited toll on Side A
-[44] Minibus-17 joined queue on Side A (position 1)
-[45] Truck-24 entered toll on Side A (booth 1)
-[46] Minibus-17 taken from queue on Side A
-[47] Ferry loaded Minibus-17 (capacity=2, current load=7/20)
-[48] Car-6 exited toll on Side B
-[49] Car-6 joined queue on Side B (position 5)
-[50] Minibus-16 entered toll on Side B (booth 1)
-[51] Minibus-15 exited toll on Side A
-[52] Minibus-15 joined queue on Side A (position 1)
-[53] Car-9 entered toll on Side A (booth 2)
-[54] Minibus-15 taken from queue on Side A
-[55] Ferry loaded Minibus-15 (capacity=2, current load=9/20)
-[56] Car-8 exited toll on Side B
-[57] Car-8 joined queue on Side B (position 6)
-[58] Car-10 entered toll on Side B (booth 2)
-[59] Car-9 exited toll on Side A
-[60] Car-9 joined queue on Side A (position 1)
-[61] Car-9 taken from queue on Side A
-[62] Minibus-13 entered toll on Side A (booth 2)
-[63] Ferry loaded Car-9 (capacity=1, current load=10/20)
-[64] Truck-24 exited toll on Side A
-[65] Truck-24 joined queue on Side A (position 1)
-[66] Truck-26 entered toll on Side A (booth 1)
-[67] Truck-24 taken from queue on Side A
-[68] Ferry loaded Truck-24 (capacity=3, current load=13/20)
-[69] Minibus-13 exited toll on Side A
-[70] Minibus-13 joined queue on Side A (position 1)
-[71] Minibus-20 entered toll on Side A (booth 2)
-[72] Minibus-13 taken from queue on Side A
-[73] Ferry loaded Minibus-13 (capacity=2, current load=15/20)
-[74] Minibus-16 exited toll on Side B
-[75] Minibus-16 joined queue on Side B (position 7)
-[76] Minibus-19 entered toll on Side B (booth 1)
-[77] Truck-26 exited toll on Side A
-[78] Truck-26 joined queue on Side A (position 1)
-[79] Truck-26 taken from queue on Side A
-[80] Ferry loaded Truck-26 (capacity=3, current load=18/20)
-[81] Car-10 exited toll on Side B
-[82] Car-10 joined queue on Side B (position 8)
-[83] Minibus-18 entered toll on Side B (booth 2)
-[84] Minibus-20 exited toll on Side A
-[85] Minibus-20 joined queue on Side A (position 1)
-[86] Truck-25 entered toll on Side A (booth 2)
-[87] Minibus-20 taken from queue on Side A
-[88] Ferry loaded Minibus-20 (capacity=2, current load=20/20)
-[89] Ferry is full → departing
-[90] Ferry departed from Side A with 20 units
-[91] Minibus-18 exited toll on Side B
-[92] Minibus-18 joined queue on Side B (position 9)
-[93] Minibus-22 entered toll on Side B (booth 2)
-[94] Minibus-19 exited toll on Side B
-[95] Minibus-19 joined queue on Side B (position 10)
-[96] Minibus-21 entered toll on Side B (booth 1)
-[97] Minibus-21 exited toll on Side B
-[98] Minibus-21 joined queue on Side B (position 11)
-[99] Truck-23 entered toll on Side B (booth 1)
-[100] Minibus-22 exited toll on Side B
-[101] Minibus-22 joined queue on Side B (position 12)
-[102] Truck-28 entered toll on Side B (booth 2)
-[103] Truck-23 exited toll on Side B
-[104] Truck-23 joined queue on Side B (position 13)
-[105] Truck-27 entered toll on Side B (booth 1)
-[106] Truck-28 exited toll on Side B
-[107] Truck-28 joined queue on Side B (position 14)
-[108] Truck-29 entered toll on Side B (booth 2)
-[109] Truck-25 exited toll on Side A
-[110] Truck-25 joined queue on Side A (position 1)
-[111] Truck-27 exited toll on Side B
-[112] Truck-27 joined queue on Side B (position 15)
-[113] Truck-29 exited toll on Side B
-[114] Truck-29 joined queue on Side B (position 16)
-[115] Truck-30 entered toll on Side B (booth 2)
-[116] Ferry arrived at Side B
-[117] Ferry unloading 12 vehicles on Side B
-[118] Car-4 unloaded on Side B
-[119] Car-3 unloaded on Side B
-[120] Car-7 unloaded on Side B
-[121] Truck-30 exited toll on Side B
-[122] Truck-30 joined queue on Side B (position 17)
-[123] Car-5 unloaded on Side B
-[124] Car-11 unloaded on Side B
-[125] Minibus-17 unloaded on Side B
-[126] Minibus-15 unloaded on Side B
-[127] Car-9 unloaded on Side B
-[128] Truck-24 unloaded on Side B
-[129] Minibus-13 unloaded on Side B
-[130] Truck-26 unloaded on Side B
-[131] Minibus-20 unloaded on Side B
-[132] Car-1 taken from queue on Side B
-[133] Ferry loaded Car-1 (capacity=1, current load=1/20)
-[134] Car-2 taken from queue on Side B
-[135] Ferry loaded Car-2 (capacity=1, current load=2/20)
-[136] Car-12 taken from queue on Side B
-[137] Ferry loaded Car-12 (capacity=1, current load=3/20)
-[138] Minibus-14 taken from queue on Side B
-[139] Ferry loaded Minibus-14 (capacity=2, current load=5/20)
-[140] Car-6 taken from queue on Side B
-[141] Ferry loaded Car-6 (capacity=1, current load=6/20)
-[142] Car-8 taken from queue on Side B
-[143] Ferry loaded Car-8 (capacity=1, current load=7/20)
-[144] Minibus-16 taken from queue on Side B
-[145] Ferry loaded Minibus-16 (capacity=2, current load=9/20)
-[146] Car-10 taken from queue on Side B
-[147] Ferry loaded Car-10 (capacity=1, current load=10/20)
-[148] Minibus-18 taken from queue on Side B
-[149] Ferry loaded Minibus-18 (capacity=2, current load=12/20)
-[150] Minibus-19 taken from queue on Side B
-[151] Ferry loaded Minibus-19 (capacity=2, current load=14/20)
-[152] Minibus-21 taken from queue on Side B
-[153] Ferry loaded Minibus-21 (capacity=2, current load=16/20)
-[154] Minibus-22 taken from queue on Side B
-[155] Ferry loaded Minibus-22 (capacity=2, current load=18/20)
-[156] Next vehicle Truck-23 cannot fit (18+3 > 20) → departing
-[157] Ferry departed from Side B with 18 units
-[158] Minibus-15 waiting 1,2 sec before return trip
-[159] Car-11 waiting 1,0 sec before return trip
-[160] Car-3 waiting 1,4 sec before return trip
-[161] Car-5 waiting 2,0 sec before return trip
-[162] Car-7 waiting 1,6 sec before return trip
-[163] Minibus-20 waiting 0,6 sec before return trip
-[164] Car-4 waiting 0,9 sec before return trip
-[165] Minibus-17 waiting 1,3 sec before return trip
-[166] Truck-26 waiting 1,8 sec before return trip
-[167] Minibus-13 waiting 1,7 sec before return trip
-[168] Car-9 waiting 1,3 sec before return trip
-[169] Truck-24 waiting 1,4 sec before return trip
-[170] Minibus-20 entered toll on Side B (booth 1)
-[171] Ferry arrived at Side A
-[172] Ferry unloading 12 vehicles on Side A
-[173] Car-1 unloaded on Side A
-[174] Car-2 unloaded on Side A
-[175] Car-4 entered toll on Side B (booth 2)
-[176] Car-12 unloaded on Side A
-[177] Minibus-20 exited toll on Side B
-[178] Minibus-20 joined queue on Side B (position 6)
-[179] Minibus-14 unloaded on Side A
-[180] Car-6 unloaded on Side A
-[181] Car-8 unloaded on Side A
-[182] Minibus-16 unloaded on Side A
-[183] Car-4 exited toll on Side B
-[184] Car-4 joined queue on Side B (position 7)
-[185] Car-11 entered toll on Side B (booth 2)
-[186] Car-10 unloaded on Side A
-[187] Minibus-18 unloaded on Side A
-[188] Minibus-19 unloaded on Side A
-[189] Minibus-17 entered toll on Side B (booth 1)
-[190] Minibus-21 unloaded on Side A
-[191] Minibus-22 unloaded on Side A
-[192] Truck-25 taken from queue on Side A
-[193] Ferry loaded Truck-25 (capacity=3, current load=3/20)
-[194] Car-1 waiting 0,6 sec before return trip
-[195] Car-12 waiting 1,1 sec before return trip
-[196] Car-2 waiting 1,7 sec before return trip
-[197] Car-8 waiting 1,3 sec before return trip
-[198] Car-10 waiting 1,4 sec before return trip
-[199] Minibus-16 waiting 1,5 sec before return trip
-[200] Car-6 waiting 2,0 sec before return trip
-[201] Minibus-14 waiting 1,6 sec before return trip
-[202] Minibus-22 waiting 2,0 sec before return trip
-[203] Minibus-21 waiting 0,5 sec before return trip
-[204] Minibus-18 waiting 1,3 sec before return trip
-[205] Minibus-19 waiting 0,9 sec before return trip
-[206] Car-11 exited toll on Side B
-[207] Car-11 joined queue on Side B (position 8)
-[208] Minibus-15 entered toll on Side B (booth 2)
-[209] Minibus-17 exited toll on Side B
-[210] Minibus-17 joined queue on Side B (position 9)
-[211] Car-9 entered toll on Side B (booth 1)
-[212] Minibus-15 exited toll on Side B
-[213] Minibus-15 joined queue on Side B (position 10)
-[214] Car-3 entered toll on Side B (booth 2)
-[215] Minibus-21 entered toll on Side A (booth 1)
-[216] Car-9 exited toll on Side B
-[217] Car-9 joined queue on Side B (position 11)
-[218] Car-7 entered toll on Side B (booth 1)
-[219] Car-1 entered toll on Side A (booth 2)
-[220] Car-3 exited toll on Side B
-[221] Car-3 joined queue on Side B (position 12)
-[222] Truck-24 entered toll on Side B (booth 2)
-[223] Car-7 exited toll on Side B
-[224] Car-7 joined queue on Side B (position 13)
-[225] Car-1 exited toll on Side A
-[226] Car-1 joined queue on Side A (position 1)
-[227] Minibus-19 entered toll on Side A (booth 2)
-[228] Car-1 taken from queue on Side A
-[229] Ferry loaded Car-1 (capacity=1, current load=4/20)
-[230] Minibus-21 exited toll on Side A
-[231] Minibus-21 joined queue on Side A (position 1)
-[232] Minibus-21 taken from queue on Side A
-[233] Ferry loaded Minibus-21 (capacity=2, current load=6/20)
-[234] Truck-24 exited toll on Side B
-[235] Truck-24 joined queue on Side B (position 14)
-[236] Minibus-13 entered toll on Side B (booth 2)
-[237] Car-12 entered toll on Side A (booth 1)
-[238] Minibus-13 exited toll on Side B
-[239] Minibus-13 joined queue on Side B (position 15)
-[240] Truck-26 entered toll on Side B (booth 2)
-[241] Minibus-19 exited toll on Side A
-[242] Minibus-19 joined queue on Side A (position 1)
-[243] Car-8 entered toll on Side A (booth 2)
-[244] Minibus-19 taken from queue on Side A
-[245] Ferry loaded Minibus-19 (capacity=2, current load=8/20)
-[246] Car-12 exited toll on Side A
-[247] Car-12 joined queue on Side A (position 1)
-[248] Minibus-18 entered toll on Side A (booth 1)
-[249] Car-12 taken from queue on Side A
-[250] Ferry loaded Car-12 (capacity=1, current load=9/20)
-[251] Car-8 exited toll on Side A
-[252] Car-8 joined queue on Side A (position 1)
-[253] Car-8 taken from queue on Side A
-[254] Ferry loaded Car-8 (capacity=1, current load=10/20)
-[255] Minibus-18 exited toll on Side A
-[256] Minibus-18 joined queue on Side A (position 1)
-[257] Car-10 entered toll on Side A (booth 1)
-[258] Minibus-18 taken from queue on Side A
-[259] Ferry loaded Minibus-18 (capacity=2, current load=12/20)
-[260] Truck-26 exited toll on Side B
-[261] Truck-26 joined queue on Side B (position 16)
-[262] Car-5 entered toll on Side B (booth 2)
-[263] Car-2 entered toll on Side A (booth 2)
-[264] Car-10 exited toll on Side A
-[265] Car-10 joined queue on Side A (position 1)
-[266] Minibus-16 entered toll on Side A (booth 1)
-[267] Car-10 taken from queue on Side A
-[268] Ferry loaded Car-10 (capacity=1, current load=13/20)
-[269] Car-5 exited toll on Side B
-[270] Car-5 joined queue on Side B (position 17)
-[271] Car-2 exited toll on Side A
-[272] Car-2 joined queue on Side A (position 1)
-[273] Car-2 taken from queue on Side A
-[274] Ferry loaded Car-2 (capacity=1, current load=14/20)
-[275] Minibus-16 exited toll on Side A
-[276] Minibus-16 joined queue on Side A (position 1)
-[277] Minibus-16 taken from queue on Side A
-[278] Minibus-14 entered toll on Side A (booth 1)
-[279] Ferry loaded Minibus-16 (capacity=2, current load=16/20)
-[280] Minibus-14 exited toll on Side A
-[281] Minibus-14 joined queue on Side A (position 1)
-[282] Car-6 entered toll on Side A (booth 1)
-[283] Minibus-14 taken from queue on Side A
-[284] Ferry loaded Minibus-14 (capacity=2, current load=18/20)
-[285] Timeout reached → departing to prevent starvation
-[286] Ferry departed from Side A with 18 units
-[287] Car-6 exited toll on Side A
-[288] Car-6 joined queue on Side A (position 1)
-[289] Minibus-22 entered toll on Side A (booth 1)
-[290] Minibus-22 exited toll on Side A
-[291] Minibus-22 joined queue on Side A (position 2)
-[292] Ferry arrived at Side B
-[293] Ferry unloading 11 vehicles on Side B
-[294] Truck-25 unloaded on Side B
-[295] Car-1 unloaded on Side B
-[296] Minibus-21 unloaded on Side B
-[297] Minibus-19 unloaded on Side B
-[298] Car-12 unloaded on Side B
-[299] Car-8 unloaded on Side B
-[300] Minibus-18 unloaded on Side B
-[301] Car-10 unloaded on Side B
-[302] Car-2 unloaded on Side B
-[303] Minibus-16 unloaded on Side B
-[304] Minibus-14 unloaded on Side B
-[305] Truck-23 taken from queue on Side B
-[306] Ferry loaded Truck-23 (capacity=3, current load=3/20)
-[307] Truck-28 taken from queue on Side B
-[308] Ferry loaded Truck-28 (capacity=3, current load=6/20)
-[309] Truck-27 taken from queue on Side B
-[310] Ferry loaded Truck-27 (capacity=3, current load=9/20)
-[311] Truck-29 taken from queue on Side B
-[312] Ferry loaded Truck-29 (capacity=3, current load=12/20)
-[313] Truck-30 taken from queue on Side B
-[314] Ferry loaded Truck-30 (capacity=3, current load=15/20)
-[315] Minibus-20 taken from queue on Side B
-[316] Ferry loaded Minibus-20 (capacity=2, current load=17/20)
-[317] Car-4 taken from queue on Side B
-[318] Ferry loaded Car-4 (capacity=1, current load=18/20)
-[319] Car-11 taken from queue on Side B
-[320] Ferry loaded Car-11 (capacity=1, current load=19/20)
-[321] Next vehicle Minibus-17 cannot fit (19+2 > 20) → departing
-[322] Ferry departed from Side B with 19 units
-[323] Truck-25 waiting 0,8 sec before return trip
-[324] Minibus-18 COMPLETED full round trip
-[325] Car-8 COMPLETED full round trip
-[326] Car-1 COMPLETED full round trip
-[327] Car-12 COMPLETED full round trip
-[328] Minibus-21 COMPLETED full round trip
-[329] Minibus-19 COMPLETED full round trip
-[330] Car-10 COMPLETED full round trip
-[331] Car-2 COMPLETED full round trip
-[332] Minibus-16 COMPLETED full round trip
-[333] Minibus-14 COMPLETED full round trip
-[334] Ferry arrived at Side A
-[335] Ferry unloading 8 vehicles on Side A
-[336] Truck-23 unloaded on Side A
-[337] Truck-25 entered toll on Side B (booth 1)
-[338] Truck-28 unloaded on Side A
-[339] Truck-27 unloaded on Side A
-[340] Truck-29 unloaded on Side A
-[341] Truck-30 unloaded on Side A
-[342] Minibus-20 unloaded on Side A
-[343] Car-4 unloaded on Side A
-[344] Car-11 unloaded on Side A
-[345] Car-6 taken from queue on Side A
-[346] Ferry loaded Car-6 (capacity=1, current load=1/20)
-[347] Minibus-22 taken from queue on Side A
-[348] Ferry loaded Minibus-22 (capacity=2, current load=3/20)
-[349] Truck-23 waiting 1,4 sec before return trip
-[350] Truck-28 waiting 1,4 sec before return trip
-[351] Truck-27 waiting 0,6 sec before return trip
-[352] Truck-29 waiting 1,9 sec before return trip
-[353] Minibus-20 COMPLETED full round trip
-[354] Car-4 COMPLETED full round trip
-[355] Car-11 COMPLETED full round trip
-[356] Truck-30 waiting 1,0 sec before return trip
-[357] Truck-25 exited toll on Side B
-[358] Truck-25 joined queue on Side B (position 10)
-[359] Truck-27 entered toll on Side A (booth 2)
-[360] Truck-27 exited toll on Side A
-[361] Truck-27 joined queue on Side A (position 1)
-[362] Truck-27 taken from queue on Side A
-[363] Ferry loaded Truck-27 (capacity=3, current load=6/20)
-[364] Truck-30 entered toll on Side A (booth 2)
-[365] Truck-30 exited toll on Side A
-[366] Truck-30 joined queue on Side A (position 1)
-[367] Truck-30 taken from queue on Side A
-[368] Ferry loaded Truck-30 (capacity=3, current load=9/20)
-[369] Truck-28 entered toll on Side A (booth 1)
-[370] Truck-23 entered toll on Side A (booth 2)
-[371] Truck-23 exited toll on Side A
-[372] Truck-23 joined queue on Side A (position 1)
-[373] Truck-23 taken from queue on Side A
-[374] Ferry loaded Truck-23 (capacity=3, current load=12/20)
-[375] Truck-28 exited toll on Side A
-[376] Truck-28 joined queue on Side A (position 1)
-[377] Truck-28 taken from queue on Side A
-[378] Ferry loaded Truck-28 (capacity=3, current load=15/20)
-[379] Truck-29 entered toll on Side A (booth 1)
-[380] Truck-29 exited toll on Side A
-[381] Truck-29 joined queue on Side A (position 1)
-[382] Truck-29 taken from queue on Side A
-[383] Ferry loaded Truck-29 (capacity=3, current load=18/20)
-[384] Timeout reached → departing to prevent starvation
-[385] Ferry departed from Side A with 18 units
-[386] Ferry arrived at Side B
-[387] Ferry unloading 7 vehicles on Side B
-[388] Car-6 unloaded on Side B
-[389] Minibus-22 unloaded on Side B
-[390] Truck-27 unloaded on Side B
-[391] Truck-30 unloaded on Side B
-[392] Truck-23 unloaded on Side B
-[393] Truck-28 unloaded on Side B
-[394] Truck-29 unloaded on Side B
-[395] Minibus-17 taken from queue on Side B
-[396] Ferry loaded Minibus-17 (capacity=2, current load=2/20)
-[397] Minibus-15 taken from queue on Side B
-[398] Ferry loaded Minibus-15 (capacity=2, current load=4/20)
-[399] Car-9 taken from queue on Side B
-[400] Ferry loaded Car-9 (capacity=1, current load=5/20)
-[401] Car-3 taken from queue on Side B
-[402] Ferry loaded Car-3 (capacity=1, current load=6/20)
-[403] Car-7 taken from queue on Side B
-[404] Ferry loaded Car-7 (capacity=1, current load=7/20)
-[405] Truck-24 taken from queue on Side B
-[406] Ferry loaded Truck-24 (capacity=3, current load=10/20)
-[407] Minibus-13 taken from queue on Side B
-[408] Ferry loaded Minibus-13 (capacity=2, current load=12/20)
-[409] Truck-26 taken from queue on Side B
-[410] Ferry loaded Truck-26 (capacity=3, current load=15/20)
-[411] Car-5 taken from queue on Side B
-[412] Ferry loaded Car-5 (capacity=1, current load=16/20)
-[413] Truck-25 taken from queue on Side B
-[414] Ferry loaded Truck-25 (capacity=3, current load=19/20)
-[415] Car-6 COMPLETED full round trip
-[416] Minibus-22 COMPLETED full round trip
-[417] Truck-27 COMPLETED full round trip
-[418] Truck-30 COMPLETED full round trip
-[419] Truck-28 COMPLETED full round trip
-[420] Truck-23 COMPLETED full round trip
-[421] Truck-29 COMPLETED full round trip
-[422] Timeout reached → departing to prevent starvation
-[423] Ferry departed from Side B with 19 units
-[424] Ferry arrived at Side A
-[425] Ferry unloading 10 vehicles on Side A
-[426] Minibus-17 unloaded on Side A
-[427] Minibus-15 unloaded on Side A
-[428] Car-9 unloaded on Side A
-[429] Car-3 unloaded on Side A
-[430] Car-7 unloaded on Side A
-[431] Truck-24 unloaded on Side A
-[432] Minibus-13 unloaded on Side A
-[433] Truck-26 unloaded on Side A
-[434] Car-5 unloaded on Side A
-[435] Truck-25 unloaded on Side A
-[436] Minibus-17 COMPLETED full round trip
-[437] Minibus-15 COMPLETED full round trip
-[438] Car-3 COMPLETED full round trip
-[439] Car-9 COMPLETED full round trip
-[440] Car-7 COMPLETED full round trip
-[441] Truck-24 COMPLETED full round trip
-[442] Truck-26 COMPLETED full round trip
-[443] Minibus-13 COMPLETED full round trip
-[444] Truck-25 COMPLETED full round trip
-[445] Car-5 COMPLETED full round trip
-[446] Ferry thread interrupted
+[4] Car-1 entered toll on Side A (booth 1)
+[5] Car-5 entered toll on Side B (booth 1)
+[6] Car-1 exited toll on Side A
+[7] Car-10 entered toll on Side A (booth 1)
+[8] Car-1 joined queue on Side A (position 1)
+[9] Car-7 exited toll on Side B
+[10] Car-7 joined queue on Side B (position 1)
+[11] Car-8 entered toll on Side B (booth 2)
+[12] Car-7 taken from queue on Side B
+[13] Ferry loaded Car-7 (capacity=1, current load=1/20)
+[14] Car-5 exited toll on Side B
+[15] Car-5 joined queue on Side B (position 1)
+[16] Car-6 entered toll on Side B (booth 1)
+[17] Car-5 taken from queue on Side B
+[18] Ferry loaded Car-5 (capacity=1, current load=2/20)
+[19] Car-10 exited toll on Side A
+[20] Car-10 joined queue on Side A (position 2)
+[21] Car-4 entered toll on Side A (booth 1)
+[22] Car-3 exited toll on Side A
+[23] Car-3 joined queue on Side A (position 3)
+[24] Car-2 entered toll on Side A (booth 2)
+[25] Car-4 exited toll on Side A
+[26] Car-4 joined queue on Side A (position 4)
+[27] Minibus-2 entered toll on Side A (booth 1)
+[28] Car-8 exited toll on Side B
+[29] Car-8 joined queue on Side B (position 1)
+[30] Truck-3 entered toll on Side B (booth 2)
+[31] Car-8 taken from queue on Side B
+[32] Ferry loaded Car-8 (capacity=1, current load=3/20)
+[33] Minibus-2 exited toll on Side A
+[34] Minibus-2 joined queue on Side A (position 5)
+[35] Minibus-5 entered toll on Side A (booth 1)
+[36] Car-6 exited toll on Side B
+[37] Car-6 joined queue on Side B (position 1)
+[38] Minibus-1 entered toll on Side B (booth 1)
+[39] Car-6 taken from queue on Side B
+[40] Ferry loaded Car-6 (capacity=1, current load=4/20)
+[41] Truck-3 exited toll on Side B
+[42] Truck-3 joined queue on Side B (position 1)
+[43] Minibus-8 entered toll on Side B (booth 2)
+[44] Truck-3 taken from queue on Side B
+[45] Ferry loaded Truck-3 (capacity=3, current load=7/20)
+[46] Minibus-5 exited toll on Side A
+[47] Minibus-5 joined queue on Side A (position 6)
+[48] Minibus-9 entered toll on Side A (booth 1)
+[49] Car-2 exited toll on Side A
+[50] Car-2 joined queue on Side A (position 7)
+[51] Car-11 entered toll on Side A (booth 2)
+[52] Minibus-8 exited toll on Side B
+[53] Minibus-8 joined queue on Side B (position 1)
+[54] Minibus-8 taken from queue on Side B
+[55] Minibus-1 exited toll on Side B
+[56] Minibus-1 joined queue on Side B (position 1)
+[57] Minibus-4 entered toll on Side B (booth 1)
+[58] Ferry loaded Minibus-8 (capacity=2, current load=9/20)
+[59] Minibus-1 taken from queue on Side B
+[60] Ferry loaded Minibus-1 (capacity=2, current load=11/20)
+[61] Car-11 exited toll on Side A
+[62] Car-11 joined queue on Side A (position 8)
+[63] Minibus-7 entered toll on Side A (booth 2)
+[64] Minibus-9 exited toll on Side A
+[65] Minibus-9 joined queue on Side A (position 9)
+[66] Truck-2 entered toll on Side A (booth 1)
+[67] Minibus-4 exited toll on Side B
+[68] Minibus-4 joined queue on Side B (position 1)
+[69] Minibus-4 taken from queue on Side B
+[70] Minibus-6 entered toll on Side B (booth 1)
+[71] Ferry loaded Minibus-4 (capacity=2, current load=13/20)
+[72] Minibus-7 exited toll on Side A
+[73] Minibus-7 joined queue on Side A (position 10)
+[74] Car-12 entered toll on Side A (booth 2)
+[75] Truck-2 exited toll on Side A
+[76] Truck-2 joined queue on Side A (position 11)
+[77] Truck-5 entered toll on Side A (booth 1)
+[78] Minibus-6 exited toll on Side B
+[79] Minibus-6 joined queue on Side B (position 1)
+[80] Car-9 entered toll on Side B (booth 1)
+[81] Minibus-6 taken from queue on Side B
+[82] Ferry loaded Minibus-6 (capacity=2, current load=15/20)
+[83] Car-12 exited toll on Side A
+[84] Car-12 joined queue on Side A (position 12)
+[85] Minibus-3 entered toll on Side A (booth 2)
+[86] Truck-5 exited toll on Side A
+[87] Truck-5 joined queue on Side A (position 13)
+[88] Minibus-3 exited toll on Side A
+[89] Minibus-3 joined queue on Side A (position 14)
+[90] Truck-1 entered toll on Side A (booth 2)
+[91] Car-9 exited toll on Side B
+[92] Car-9 joined queue on Side B (position 1)
+[93] Truck-7 entered toll on Side B (booth 1)
+[94] Car-9 taken from queue on Side B
+[95] Ferry loaded Car-9 (capacity=1, current load=16/20)
+[96] Truck-1 exited toll on Side A
+[97] Truck-1 joined queue on Side A (position 15)
+[98] Truck-7 exited toll on Side B
+[99] Truck-7 joined queue on Side B (position 1)
+[100] Minibus-10 entered toll on Side B (booth 1)
+[101] Truck-7 taken from queue on Side B
+[102] Ferry loaded Truck-7 (capacity=3, current load=19/20)
+[103] Minibus-10 exited toll on Side B
+[104] Minibus-10 joined queue on Side B (position 1)
+[105] Truck-8 entered toll on Side B (booth 1)
+[106] Next vehicle Minibus-10 cannot fit (19+2 > 20) → departing
+[107] Ferry departed from Side B with 19 units
+[108] Truck-8 exited toll on Side B
+[109] Truck-8 joined queue on Side B (position 2)
+[110] Truck-4 entered toll on Side B (booth 1)
+[111] Truck-4 exited toll on Side B
+[112] Truck-4 joined queue on Side B (position 3)
+[113] Truck-6 entered toll on Side B (booth 1)
+[114] Ferry arrived at Side A
+[115] Ferry unloading 11 vehicles on Side A
+[116] Car-7 unloaded on Side A
+[117] Car-7 waiting 1,4 sec before return trip
+[118] Car-5 unloaded on Side A
+[119] Car-5 waiting 1,5 sec before return trip
+[120] Car-8 unloaded on Side A
+[121] Car-8 waiting 1,7 sec before return trip
+[122] Car-6 unloaded on Side A
+[123] Car-6 waiting 1,2 sec before return trip
+[124] Truck-3 unloaded on Side A
+[125] Truck-3 waiting 1,0 sec before return trip
+[126] Minibus-8 unloaded on Side A
+[127] Minibus-8 waiting 1,1 sec before return trip
+[128] Minibus-1 unloaded on Side A
+[129] Minibus-1 waiting 1,6 sec before return trip
+[130] Minibus-4 unloaded on Side A
+[131] Minibus-4 waiting 1,6 sec before return trip
+[132] Minibus-6 unloaded on Side A
+[133] Minibus-6 waiting 1,8 sec before return trip
+[134] Car-9 unloaded on Side A
+[135] Car-9 waiting 0,6 sec before return trip
+[136] Truck-6 exited toll on Side B
+[137] Truck-6 joined queue on Side B (position 4)
+[138] Truck-7 unloaded on Side A
+[139] Truck-7 waiting 1,7 sec before return trip
+[140] Car-1 taken from queue on Side A
+[141] Ferry loaded Car-1 (capacity=1, current load=1/20)
+[142] Car-10 taken from queue on Side A
+[143] Ferry loaded Car-10 (capacity=1, current load=2/20)
+[144] Car-3 taken from queue on Side A
+[145] Ferry loaded Car-3 (capacity=1, current load=3/20)
+[146] Car-4 taken from queue on Side A
+[147] Ferry loaded Car-4 (capacity=1, current load=4/20)
+[148] Minibus-2 taken from queue on Side A
+[149] Ferry loaded Minibus-2 (capacity=2, current load=6/20)
+[150] Minibus-5 taken from queue on Side A
+[151] Ferry loaded Minibus-5 (capacity=2, current load=8/20)
+[152] Car-2 taken from queue on Side A
+[153] Ferry loaded Car-2 (capacity=1, current load=9/20)
+[154] Car-11 taken from queue on Side A
+[155] Ferry loaded Car-11 (capacity=1, current load=10/20)
+[156] Minibus-9 taken from queue on Side A
+[157] Ferry loaded Minibus-9 (capacity=2, current load=12/20)
+[158] Minibus-7 taken from queue on Side A
+[159] Ferry loaded Minibus-7 (capacity=2, current load=14/20)
+[160] Truck-2 taken from queue on Side A
+[161] Ferry loaded Truck-2 (capacity=3, current load=17/20)
+[162] Car-12 taken from queue on Side A
+[163] Ferry loaded Car-12 (capacity=1, current load=18/20)
+[164] Next vehicle Truck-5 cannot fit (18+3 > 20) → departing
+[165] Ferry departed from Side A with 18 units
+[166] Car-9 entered toll on Side A (booth 1)
+[167] Minibus-8 entered toll on Side A (booth 2)
+[168] Car-9 exited toll on Side A
+[169] Car-9 joined queue on Side A (position 4)
+[170] Truck-3 entered toll on Side A (booth 1)
+[171] Ferry arrived at Side B
+[172] Ferry unloading 12 vehicles on Side B
+[173] Car-1 unloaded on Side B
+[174] Car-1 waiting 0,8 sec before return trip
+[175] Car-10 unloaded on Side B
+[176] Car-10 waiting 1,1 sec before return trip
+[177] Car-3 unloaded on Side B
+[178] Car-3 waiting 0,7 sec before return trip
+[179] Car-4 unloaded on Side B
+[180] Car-4 waiting 1,1 sec before return trip
+[181] Minibus-8 exited toll on Side A
+[182] Minibus-8 joined queue on Side A (position 5)
+[183] Car-7 entered toll on Side A (booth 2)
+[184] Minibus-2 unloaded on Side B
+[185] Minibus-2 waiting 0,5 sec before return trip
+[186] Minibus-5 unloaded on Side B
+[187] Minibus-5 waiting 0,8 sec before return trip
+[188] Car-2 unloaded on Side B
+[189] Car-2 waiting 1,1 sec before return trip
+[190] Car-11 unloaded on Side B
+[191] Car-11 waiting 1,7 sec before return trip
+[192] Truck-3 exited toll on Side A
+[193] Truck-3 joined queue on Side A (position 6)
+[194] Car-6 entered toll on Side A (booth 1)
+[195] Minibus-9 unloaded on Side B
+[196] Minibus-9 waiting 1,2 sec before return trip
+[197] Minibus-7 unloaded on Side B
+[198] Minibus-7 waiting 1,1 sec before return trip
+[199] Truck-2 unloaded on Side B
+[200] Truck-2 waiting 1,2 sec before return trip
+[201] Car-7 exited toll on Side A
+[202] Car-7 joined queue on Side A (position 7)
+[203] Car-8 entered toll on Side A (booth 2)
+[204] Car-12 unloaded on Side B
+[205] Car-12 waiting 1,7 sec before return trip
+[206] Minibus-10 taken from queue on Side B
+[207] Ferry loaded Minibus-10 (capacity=2, current load=2/20)
+[208] Truck-8 taken from queue on Side B
+[209] Ferry loaded Truck-8 (capacity=3, current load=5/20)
+[210] Truck-4 taken from queue on Side B
+[211] Ferry loaded Truck-4 (capacity=3, current load=8/20)
+[212] Truck-6 taken from queue on Side B
+[213] Ferry loaded Truck-6 (capacity=3, current load=11/20)
+[214] Car-8 exited toll on Side A
+[215] Car-8 joined queue on Side A (position 8)
+[216] Minibus-4 entered toll on Side A (booth 2)
+[217] Car-6 exited toll on Side A
+[218] Car-6 joined queue on Side A (position 9)
+[219] Car-5 entered toll on Side A (booth 1)
+[220] Minibus-2 entered toll on Side B (booth 1)
+[221] Car-5 exited toll on Side A
+[222] Car-5 joined queue on Side A (position 10)
+[223] Minibus-6 entered toll on Side A (booth 1)
+[224] Minibus-2 exited toll on Side B
+[225] Minibus-2 joined queue on Side B (position 1)
+[226] Car-1 entered toll on Side B (booth 1)
+[227] Minibus-2 taken from queue on Side B
+[228] Car-3 entered toll on Side B (booth 2)
+[229] Minibus-6 exited toll on Side A
+[230] Minibus-6 joined queue on Side A (position 11)
+[231] Ferry loaded Minibus-2 (capacity=2, current load=13/20)
+[232] Minibus-4 exited toll on Side A
+[233] Minibus-4 joined queue on Side A (position 12)
+[234] Minibus-1 entered toll on Side A (booth 2)
+[235] Car-3 exited toll on Side B
+[236] Car-3 joined queue on Side B (position 1)
+[237] Car-3 taken from queue on Side B
+[238] Ferry loaded Car-3 (capacity=1, current load=14/20)
+[239] Car-1 exited toll on Side B
+[240] Car-1 joined queue on Side B (position 1)
+[241] Minibus-5 entered toll on Side B (booth 1)
+[242] Car-1 taken from queue on Side B
+[243] Ferry loaded Car-1 (capacity=1, current load=15/20)
+[244] Car-10 entered toll on Side B (booth 2)
+[245] Minibus-1 exited toll on Side A
+[246] Minibus-1 joined queue on Side A (position 13)
+[247] Truck-7 entered toll on Side A (booth 2)
+[248] Minibus-5 exited toll on Side B
+[249] Minibus-5 joined queue on Side B (position 1)
+[250] Car-2 entered toll on Side B (booth 1)
+[251] Minibus-5 taken from queue on Side B
+[252] Ferry loaded Minibus-5 (capacity=2, current load=17/20)
+[253] Car-10 exited toll on Side B
+[254] Car-10 joined queue on Side B (position 1)
+[255] Car-4 entered toll on Side B (booth 2)
+[256] Car-10 taken from queue on Side B
+[257] Ferry loaded Car-10 (capacity=1, current load=18/20)
+[258] Car-4 exited toll on Side B
+[259] Car-4 joined queue on Side B (position 1)
+[260] Minibus-7 entered toll on Side B (booth 2)
+[261] Car-4 taken from queue on Side B
+[262] Ferry loaded Car-4 (capacity=1, current load=19/20)
+[263] Car-2 exited toll on Side B
+[264] Car-2 joined queue on Side B (position 1)
+[265] Minibus-9 entered toll on Side B (booth 1)
+[266] Car-2 taken from queue on Side B
+[267] Ferry loaded Car-2 (capacity=1, current load=20/20)
+[268] Ferry is full → departing
+[269] Ferry departed from Side B with 20 units
+[270] Truck-7 exited toll on Side A
+[271] Truck-7 joined queue on Side A (position 14)
+[272] Minibus-7 exited toll on Side B
+[273] Minibus-7 joined queue on Side B (position 1)
+[274] Minibus-9 exited toll on Side B
+[275] Minibus-9 joined queue on Side B (position 2)
+[276] Truck-2 entered toll on Side B (booth 1)
+[277] Truck-2 exited toll on Side B
+[278] Truck-2 joined queue on Side B (position 3)
+[279] Car-11 entered toll on Side B (booth 1)
+[280] Ferry arrived at Side A
+[281] Ferry unloading 11 vehicles on Side A
+[282] Minibus-10 unloaded on Side A
+[283] Minibus-10 waiting 0,6 sec before return trip
+[284] Truck-8 unloaded on Side A
+[285] Truck-8 waiting 2,0 sec before return trip
+[286] Car-11 exited toll on Side B
+[287] Car-11 joined queue on Side B (position 4)
+[288] Car-12 entered toll on Side B (booth 1)
+[289] Truck-4 unloaded on Side A
+[290] Truck-4 waiting 0,9 sec before return trip
+[291] Truck-6 unloaded on Side A
+[292] Truck-6 waiting 0,9 sec before return trip
+[293] Minibus-2 unloaded on Side A
+[294] Minibus-2 COMPLETED full round trip
+[295] Car-3 unloaded on Side A
+[296] Car-3 COMPLETED full round trip
+[297] Car-1 unloaded on Side A
+[298] Car-1 COMPLETED full round trip
+[299] Minibus-5 unloaded on Side A
+[300] Minibus-5 COMPLETED full round trip
+[301] Car-10 unloaded on Side A
+[302] Car-10 COMPLETED full round trip
+[303] Car-4 unloaded on Side A
+[304] Car-4 COMPLETED full round trip
+[305] Car-2 unloaded on Side A
+[306] Car-2 COMPLETED full round trip
+[307] Truck-5 taken from queue on Side A
+[308] Ferry loaded Truck-5 (capacity=3, current load=3/20)
+[309] Minibus-3 taken from queue on Side A
+[310] Car-12 exited toll on Side B
+[311] Car-12 joined queue on Side B (position 5)
+[312] Ferry loaded Minibus-3 (capacity=2, current load=5/20)
+[313] Truck-1 taken from queue on Side A
+[314] Ferry loaded Truck-1 (capacity=3, current load=8/20)
+[315] Car-9 taken from queue on Side A
+[316] Ferry loaded Car-9 (capacity=1, current load=9/20)
+[317] Minibus-8 taken from queue on Side A
+[318] Ferry loaded Minibus-8 (capacity=2, current load=11/20)
+[319] Truck-3 taken from queue on Side A
+[320] Ferry loaded Truck-3 (capacity=3, current load=14/20)
+[321] Car-7 taken from queue on Side A
+[322] Ferry loaded Car-7 (capacity=1, current load=15/20)
+[323] Car-8 taken from queue on Side A
+[324] Ferry loaded Car-8 (capacity=1, current load=16/20)
+[325] Car-6 taken from queue on Side A
+[326] Minibus-10 entered toll on Side A (booth 2)
+[327] Ferry loaded Car-6 (capacity=1, current load=17/20)
+[328] Car-5 taken from queue on Side A
+[329] Ferry loaded Car-5 (capacity=1, current load=18/20)
+[330] Minibus-6 taken from queue on Side A
+[331] Ferry loaded Minibus-6 (capacity=2, current load=20/20)
+[332] Ferry is full → departing
+[333] Ferry departed from Side A with 20 units
+[334] Truck-6 entered toll on Side A (booth 1)
+[335] Minibus-10 exited toll on Side A
+[336] Minibus-10 joined queue on Side A (position 4)
+[337] Truck-6 exited toll on Side A
+[338] Truck-6 joined queue on Side A (position 5)
+[339] Truck-4 entered toll on Side A (booth 1)
+[340] Truck-4 exited toll on Side A
+[341] Truck-4 joined queue on Side A (position 6)
+[342] Ferry arrived at Side B
+[343] Ferry unloading 11 vehicles on Side B
+[344] Truck-5 unloaded on Side B
+[345] Truck-5 waiting 1,9 sec before return trip
+[346] Minibus-3 unloaded on Side B
+[347] Minibus-3 waiting 0,5 sec before return trip
+[348] Truck-1 unloaded on Side B
+[349] Truck-1 waiting 0,9 sec before return trip
+[350] Car-9 unloaded on Side B
+[351] Car-9 COMPLETED full round trip
+[352] Minibus-8 unloaded on Side B
+[353] Minibus-8 COMPLETED full round trip
+[354] Truck-3 unloaded on Side B
+[355] Truck-3 COMPLETED full round trip
+[356] Car-7 unloaded on Side B
+[357] Car-7 COMPLETED full round trip
+[358] Car-8 unloaded on Side B
+[359] Car-8 COMPLETED full round trip
+[360] Car-6 unloaded on Side B
+[361] Car-6 COMPLETED full round trip
+[362] Car-5 unloaded on Side B
+[363] Car-5 COMPLETED full round trip
+[364] Minibus-6 unloaded on Side B
+[365] Minibus-6 COMPLETED full round trip
+[366] Minibus-7 taken from queue on Side B
+[367] Ferry loaded Minibus-7 (capacity=2, current load=2/20)
+[368] Minibus-9 taken from queue on Side B
+[369] Truck-8 entered toll on Side A (booth 1)
+[370] Ferry loaded Minibus-9 (capacity=2, current load=4/20)
+[371] Truck-2 taken from queue on Side B
+[372] Ferry loaded Truck-2 (capacity=3, current load=7/20)
+[373] Car-11 taken from queue on Side B
+[374] Ferry loaded Car-11 (capacity=1, current load=8/20)
+[375] Car-12 taken from queue on Side B
+[376] Minibus-3 entered toll on Side B (booth 2)
+[377] Ferry loaded Car-12 (capacity=1, current load=9/20)
+[378] Truck-8 exited toll on Side A
+[379] Truck-8 joined queue on Side A (position 7)
+[380] Truck-1 entered toll on Side B (booth 1)
+[381] Minibus-3 exited toll on Side B
+[382] Minibus-3 joined queue on Side B (position 1)
+[383] Minibus-3 taken from queue on Side B
+[384] Ferry loaded Minibus-3 (capacity=2, current load=11/20)
+[385] Truck-1 exited toll on Side B
+[386] Truck-1 joined queue on Side B (position 1)
+[387] Truck-1 taken from queue on Side B
+[388] Ferry loaded Truck-1 (capacity=3, current load=14/20)
+[389] Truck-5 entered toll on Side B (booth 1)
+[390] Truck-5 exited toll on Side B
+[391] Truck-5 joined queue on Side B (position 1)
+[392] Truck-5 taken from queue on Side B
+[393] Ferry loaded Truck-5 (capacity=3, current load=17/20)
+[394] Timeout reached → departing to prevent starvation
+[395] Ferry departed from Side B with 17 units
+[396] Ferry arrived at Side A
+[397] Ferry unloading 8 vehicles on Side A
+[398] Minibus-7 unloaded on Side A
+[399] Minibus-7 COMPLETED full round trip
+[400] Minibus-9 unloaded on Side A
+[401] Minibus-9 COMPLETED full round trip
+[402] Truck-2 unloaded on Side A
+[403] Truck-2 COMPLETED full round trip
+[404] Car-11 unloaded on Side A
+[405] Car-11 COMPLETED full round trip
+[406] Car-12 unloaded on Side A
+[407] Car-12 COMPLETED full round trip
+[408] Minibus-3 unloaded on Side A
+[409] Minibus-3 COMPLETED full round trip
+[410] Truck-1 unloaded on Side A
+[411] Truck-1 COMPLETED full round trip
+[412] Truck-5 unloaded on Side A
+[413] Truck-5 COMPLETED full round trip
+[414] Minibus-4 taken from queue on Side A
+[415] Ferry loaded Minibus-4 (capacity=2, current load=2/20)
+[416] Minibus-1 taken from queue on Side A
+[417] Ferry loaded Minibus-1 (capacity=2, current load=4/20)
+[418] Truck-7 taken from queue on Side A
+[419] Ferry loaded Truck-7 (capacity=3, current load=7/20)
+[420] Minibus-10 taken from queue on Side A
+[421] Ferry loaded Minibus-10 (capacity=2, current load=9/20)
+[422] Truck-6 taken from queue on Side A
+[423] Ferry loaded Truck-6 (capacity=3, current load=12/20)
+[424] Truck-4 taken from queue on Side A
+[425] Ferry loaded Truck-4 (capacity=3, current load=15/20)
+[426] Truck-8 taken from queue on Side A
+[427] Ferry loaded Truck-8 (capacity=3, current load=18/20)
+[428] Timeout reached → departing to prevent starvation
+[429] Ferry departed from Side A with 18 units
+[430] Ferry arrived at Side B
+[431] Ferry unloading 7 vehicles on Side B
+[432] Minibus-4 unloaded on Side B
+[433] Minibus-4 COMPLETED full round trip
+[434] Minibus-1 unloaded on Side B
+[435] Minibus-1 COMPLETED full round trip
+[436] Truck-7 unloaded on Side B
+[437] Truck-7 COMPLETED full round trip
+[438] Minibus-10 unloaded on Side B
+[439] Minibus-10 COMPLETED full round trip
+[440] Truck-6 unloaded on Side B
+[441] Truck-6 COMPLETED full round trip
+[442] Truck-4 unloaded on Side B
+[443] Truck-4 COMPLETED full round trip
+[444] Truck-8 unloaded on Side B
+[445] Truck-8 COMPLETED full round trip
+[446] All vehicles completed their trip. Ferry shutting down safely.

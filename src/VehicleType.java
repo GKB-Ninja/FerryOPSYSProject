@@ -1,3 +1,7 @@
+/**
+ * Defines the parameters for different simulation actors.
+ * Stores spatial cost (capacity) and the total population count (count).
+ */
 public enum VehicleType {
     CAR(1, 12),
     MINIBUS(2, 10),

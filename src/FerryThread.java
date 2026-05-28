@@ -1,3 +1,7 @@
+/**
+ * Represents the lifecycle thread of the Ferry.
+ * Loops to load vehicles, travel, and unload until stopped.
+ */
 public class FerryThread extends Thread {
     private final Ferry ferry;
 
@@ -9,10 +13,9 @@ public class FerryThread extends Thread {
     public void run() {
         try {
             while (ferry.isRunning()) {
-                // Wait until departure conditions are met
                 ferry.boardAndDecideDeparture();
 
-                // Stop immediately if shutdown happened during waiting
+                // Break loop if simulation is terminated during the wait
                 if (!ferry.isRunning()) {
                     break;
                 }
@@ -22,13 +25,11 @@ public class FerryThread extends Thread {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
 
-            // Only log unexpected interruptions
+            // Distinguish between an unexpected crash vs. clean shutdown
             if (ferry.isRunning()) {
                 Logger.log("Ferry thread interrupted unexpectedly while running.");
-            }
-            // Else return complete message.
-            else {
-                Logger.log("All vehicles completed their trip.");
+            } else {
+                Logger.log("All vehicles completed their trip. Ferry shutting down safely.");
             }
         }
     }

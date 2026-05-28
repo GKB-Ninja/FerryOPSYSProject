@@ -1,18 +1,23 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * Manages the ferry's state, loading, unloading, and travel.
+ * Uses ReentrantLock and Condition variables to ensure mutual exclusion and prevent busy-waiting.
+ */
 public class Ferry {
     private static final int MAX_CAPACITY = 20;
-    private static final int TRAVEL_TIME_MS = 800;
     private static final int MAX_WAIT_MS = 3000;
 
     private Side currentSide;
     private int currentLoad = 0;
     private final List<Vehicle> loadedVehicles = new ArrayList<>();
 
+    // Synchronization primitives
     private final ReentrantLock lock = new ReentrantLock();
     private final Condition canLoad = lock.newCondition();
     private final Condition departureCondition = lock.newCondition();
@@ -32,10 +37,9 @@ public class Ferry {
         Logger.log(String.format("Ferry created. Starting at Side %s", startSide));
     }
 
-    /** New method: loads as many vehicles as possible from the current waiting area.
-     * Blocks until ferry should depart (full, next doesn't fit, or timeout).
-     * While waiting, it loads arriving vehicles atomically to avoid busy-waiting
-     * and to ensure mutual exclusion over ferry state.
+    /**
+     * Attempts to load vehicles from the current side's waiting area.
+     * Blocks until departure conditions (capacity, fit, or timeout) are met.
      */
     public void boardAndDecideDeparture() throws InterruptedException {
         lock.lock();
@@ -50,8 +54,11 @@ public class Ferry {
                     Vehicle next = currentWA.peekNext();
                     if (next == null) break;
                     if (currentLoad + next.getType().getCapacity() > MAX_CAPACITY) break;
+
                     Vehicle v = currentWA.getNext();
                     if (v != null) {
+                        Thread.sleep(ThreadLocalRandom.current().nextInt(10, 50)); // Random delay for boarding
+
                         currentLoad += v.getType().getCapacity();
                         loadedVehicles.add(v);
                         Logger.log(String.format("Ferry loaded %s (capacity=%d, current load=%d/%d)",
@@ -61,13 +68,13 @@ public class Ferry {
                     }
                 }
 
-                // Decide departure - Max Capacity
+                // Condition 1: Depart if maximum capacity is reached
                 if (currentLoad == MAX_CAPACITY) {
                     Logger.log("Ferry is full → departing");
                     return;
                 }
 
-                // Decide departure - Next vehicle doesn't fit
+                // Condition 2: Depart if the next vehicle in queue exceeds remaining capacity
                 Vehicle next = currentWA.peekNext();
                 if (next != null && currentLoad + next.getType().getCapacity() > MAX_CAPACITY) {
                     Logger.log(String.format("Next vehicle %s cannot fit (%d+%d > %d) → departing",
@@ -75,13 +82,12 @@ public class Ferry {
                     return;
                 }
 
-                // Decide departure - Timeout
+                // Condition 3: Depart if max wait time is reached (Fairness and Starvation prevention)
                 long remaining = deadline - System.currentTimeMillis();
                 if (remaining <= 0) {
                     Logger.log("Timeout reached → departing to prevent starvation");
                     return;
                 }
-                // Wait to be signalled that a vehicle arrived or until timeout
                 departureCondition.await(Math.min(remaining, MAX_WAIT_MS), TimeUnit.MILLISECONDS);
             }
         } finally {
@@ -89,56 +95,55 @@ public class Ferry {
         }
     }
 
+    /**
+     * Simulates the ferry's travel across the water and triggers the unloading sequence upon arrival.
+     */
     public void logAndTravel() throws InterruptedException {
-        // --- Record trip statistics BEFORE travel ---
+        long travelTimeMs = ThreadLocalRandom.current().nextInt(700, 1000); // Random travel delay
+
         lock.lock();
         try {
-            long now = System.currentTimeMillis();
-            long waitTime = now - lastArrivalTime;       // time spent at dock this side
-            // Pass trip data to Statistics
-            stats.recordTrip(currentSide, currentLoad, loadedVehicles.size(), waitTime);
-            Logger.log(String.format("Ferry departed from Side %s with %d units",
-                    currentSide, currentLoad));
+            long ferryWaitTimeMs = System.currentTimeMillis() - lastArrivalTime;
+            stats.recordTrip(currentSide, currentLoad, loadedVehicles.size(), ferryWaitTimeMs, travelTimeMs);
+            Logger.log(String.format("Ferry departed from Side %s with %d units", currentSide, currentLoad));
         } finally {
             lock.unlock();
         }
 
-        // Simulate travel
-        Thread.sleep(TRAVEL_TIME_MS);
+        Thread.sleep(travelTimeMs);
 
-        // Arrive at opposite side
         currentSide = currentSide.getOpposite();
         Logger.log(String.format("Ferry arrived at Side %s", currentSide));
 
-        // Unload all vehicles
         unloadAll();
 
-        // After unloading, the ferry is ready for new boarding
         lock.lock();
         try {
             canLoad.signalAll();
-            // Update the arrival time AFTER signalling – this is the moment
-            // the ferry is fully available on the new side.
             lastArrivalTime = System.currentTimeMillis();
         } finally {
             lock.unlock();
         }
     }
 
+    /**
+     * Empties the ferry entirely before allowing any new vehicles to board (Strict Loading/Unloading policy).
+     */
     private void unloadAll() throws InterruptedException {
         lock.lock();
         try {
             unloading = true;
-            Logger.log(String.format("Ferry unloading %d vehicles on Side %s",
-                    loadedVehicles.size(), currentSide));
+            Logger.log(String.format("Ferry unloading %d vehicles on Side %s", loadedVehicles.size(), currentSide));
 
             for (Vehicle v : loadedVehicles) {
                 Logger.log(String.format("%s unloaded on Side %s", v, currentSide));
                 v.setCurrentSide(currentSide);
+
+                // Wake up the specific vehicle thread so it can continue its lifecycle
                 synchronized (v) {
                     v.notify();
                 }
-                Thread.sleep(50);
+                Thread.sleep(ThreadLocalRandom.current().nextInt(10, 50)); // Delay for unloading
             }
 
             loadedVehicles.clear();
@@ -149,10 +154,12 @@ public class Ferry {
         }
     }
 
+    /**
+     * Wakes up the ferry thread when a new vehicle enters the waiting area.
+     */
     public void signalVehicleArrived() {
         lock.lock();
         try {
-            // Broadcast to wake any ferry waiter so it can load atomically
             departureCondition.signalAll();
         } finally {
             lock.unlock();

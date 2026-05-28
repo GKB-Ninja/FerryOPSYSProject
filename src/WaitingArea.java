@@ -3,17 +3,24 @@ import java.util.Queue;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * Represents the FIFO queue for a single side of the ferry crossing.
+ * Enforces arrival ordering and handles thread safety for joining and leaving the queue.
+ */
 public class WaitingArea {
     private final Side side;
     private final Queue<Vehicle> queue = new LinkedList<>();
+
     private final ReentrantLock lock = new ReentrantLock();
-    // Condition to wake up the ferry if it's waiting for vehicles
     private final Condition notEmpty = lock.newCondition();
 
     public WaitingArea(Side side) {
         this.side = side;
     }
 
+    /**
+     * Appends a vehicle to the end of the queue (FIFO enforcement).
+     */
     public void enter(Vehicle vehicle) {
         lock.lock();
         try {
@@ -27,7 +34,9 @@ public class WaitingArea {
         }
     }
 
-    // Safely removes and returns the front vehicle (called by Ferry during boarding)
+    /**
+     * Removes and returns the next vehicle in line, recording its final wait time.
+     */
     public Vehicle getNext() {
         lock.lock();
         try {
@@ -43,7 +52,9 @@ public class WaitingArea {
         }
     }
 
-    // Allows the ferry to check the capacity of the next vehicle without removing it
+    /**
+     * Observes the next vehicle in line without removing it (used to verify ferry capacity limit).
+     */
     public Vehicle peekNext() {
         lock.lock();
         try {
