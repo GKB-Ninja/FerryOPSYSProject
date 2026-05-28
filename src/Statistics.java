@@ -70,8 +70,8 @@ public class Statistics {
     // ---------- PERFORMANCE PER VEHICLE ----------
     public void printVehiclePerformance(List<Vehicle> vehicles) {
         System.out.println("\n================================================ PERFORMANCE PER VEHICLE ======================================================");
-        System.out.printf("%-10s %-5s %-15s %-15s %-17s %-17s %-15s %-15s %-15s%n",
-                "Type", "ID", "Idle(s)", "Travel(s)", "First Dep Time(s)", "End Time(s)",
+        System.out.printf("%-10s %-5s %-10s %-15s %-15s %-17s %-17s %-15s %-15s %-15s%n",
+                "Type", "ID", "Start Side", "Idle(s)", "Travel(s)", "First Dep Time(s)", "End Time(s)",
                 "Queue Wait(s)", "Toll Wait(s)", "Total Time(s)");
         System.out.println("===============================================================================================================================");
 
@@ -109,8 +109,9 @@ public class Statistics {
             double depSec = (v.firstDepartureTime - simStart) / 1000.0;
             double retSec = (v.getEndTime() - simStart) / 1000.0;
 
-            System.out.printf("%-10s %-5d %-15.2f %-15.2f %-17.3f %-17.3f %-15.2f %-15.2f %-15.2f%n",
+            System.out.printf("%-10s %-5d %-10s %-15.2f %-15.2f %-17.3f %-17.3f %-15.2f %-15.2f %-15.2f%n",
                     v.getType().toString(), v.getId(),
+                    v.getOriginSide().toString(),
                     idleSec, travelSec, depSec, retSec,
                     queueSec, tollSec, totalSec);
 
