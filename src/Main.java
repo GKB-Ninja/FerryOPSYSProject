@@ -19,23 +19,24 @@ public class Main {
 
         List<VehicleThread> vehicleThreads = new ArrayList<>();
         List<Vehicle> allVehicles = new ArrayList<>();   // store vehicles for statistics
-        int id = 1;
 
         // Create vehicles
         for (int i = 0; i < VehicleType.CAR.getCount(); i++) {
-            Vehicle v = new Vehicle(id++, VehicleType.CAR, randomSide());
+            Vehicle v = new Vehicle(i+1, VehicleType.CAR, randomSide());
             allVehicles.add(v);
             vehicleThreads.add(new VehicleThread(v, tollsA, tollsB,
                     waitingAreaA, waitingAreaB, ferry, stats));
         }
+
         for (int i = 0; i < VehicleType.MINIBUS.getCount(); i++) {
-            Vehicle v = new Vehicle(id++, VehicleType.MINIBUS, randomSide());
+            Vehicle v = new Vehicle(i+1, VehicleType.MINIBUS, randomSide());
             allVehicles.add(v);
             vehicleThreads.add(new VehicleThread(v, tollsA, tollsB,
                     waitingAreaA, waitingAreaB, ferry, stats));
         }
+
         for (int i = 0; i < VehicleType.TRUCK.getCount(); i++) {
-            Vehicle v = new Vehicle(id++, VehicleType.TRUCK, randomSide());
+            Vehicle v = new Vehicle(i+1, VehicleType.TRUCK, randomSide());
             allVehicles.add(v);
             vehicleThreads.add(new VehicleThread(v, tollsA, tollsB,
                     waitingAreaA, waitingAreaB, ferry, stats));
