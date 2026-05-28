@@ -63,7 +63,7 @@ public class Ferry {
      * While waiting, it loads arriving vehicles atomically to avoid busy-waiting
      * and to ensure mutual exclusion over ferry state.
      */
-    public void waitForAndLoadOrDepart() throws InterruptedException {
+    public void boardAndDecideDepartion() throws InterruptedException {
         lock.lock();
         try {
             if (unloading) return;
@@ -71,7 +71,7 @@ public class Ferry {
             WaitingArea currentWA = waitingAreas[currentSide.ordinal()];
 
             while (true) {
-                // Load as many as possible from current waiting area
+                // Load as many as possible from current waiting area queue
                 while (true) {
                     Vehicle next = currentWA.peekNext();
                     if (next == null) break;
@@ -106,9 +106,8 @@ public class Ferry {
                     Logger.log("Timeout reached → departing to prevent starvation");
                     return;
                 }
-                // Wait to be signalled that a vehicle arrived
+                // Wait to be signalled that a vehicle arrived or until timeout
                 departureCondition.await(Math.min(remaining, MAX_WAIT_MS), TimeUnit.MILLISECONDS);
-                // Loop will attempt to load again when signalled
             }
         } finally {
             lock.unlock();
